@@ -43,4 +43,4 @@ Any contribution aimed to improving the software or the hardware of NeoHeart are
 Please feel free to fork this repo, make changes, and submit pull requests.
 
 ## License
-CERN Open Hardware License - Strict (CERN-OHL-S)
+CERN Open Hardware License - Strongly Reciprocal (CERN-OHL-S)
