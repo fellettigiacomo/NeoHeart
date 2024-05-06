@@ -31,9 +31,6 @@ To get started with NeoHeart, follow these steps:
    - Click on the upload button to flash your NeoHeart.
 6. **Enjoy**:
    - Once programmed, your NeoHeart will be ready to go. Just hit the button and watch those LEDs light up!
-     
-#### Dependencies
-- [Adafruit's NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel)
 
 ## Manufacturing
 This board was made with JLCPCB's manufacturing in mind, so all components were selected upon checking their available parts, trying to use as many basics parts as possible.
