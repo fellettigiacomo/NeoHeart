@@ -17,7 +17,7 @@ Hardware and Software design for an Open Source ATtiny816-based heart shaped PCB
 
 To get started with NeoHeart, follow these steps:
 1. **Assembly**: 
-   - Ensure your NeoHeart board is fully assembled. If you didn't assemble the back using economic PCBA (which I recommend), solder the [battery holder](https://aliexpress.com/item/1005005506756152.html).
+   - If you didn't assemble the back using economic PCBA (which I recommend), solder the [battery holder](https://aliexpress.com/item/1005005506756152.html).
 2. **Powering the Board**:
    - Insert a CR2032 battery into the battery holder, ensuring the positive side of the battery matches the positive marking on the board. Alternatively, you can also power the board with the 5V and GND headers
 3. **Installing Software**:
