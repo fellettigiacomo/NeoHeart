@@ -917,7 +917,10 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/0ed58b3a-4e5b-4db4-a1ad-96d5ee3779e9")
+		(sheetname "Principale")
+		(sheetfile "neoheart_v2.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 1.8 -1.8)
@@ -1072,7 +1075,7 @@
 				)
 			)
 		)
-		(property "Value" "4,7μH"
+		(property "Value" "MLP2012V4R7MT0S1"
 			(at 0 1.55 -90)
 			(layer "F.Fab")
 			(uuid "63323f7a-f451-4939-9ee3-348fe74beba5")
@@ -3237,7 +3240,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_SPST"
+		(property "Value" "TS-1187A-B-A-B"
 			(at 0 3.75 0)
 			(layer "F.Fab")
 			(uuid "dd5c985b-2193-49d1-98e8-168ff696f71d")
@@ -3284,6 +3287,7 @@
 				)
 			)
 		)
+		(path "/6b601a6b-44be-4ff3-8f29-f550fc874ead")
 		(sheetname "Principale")
 		(sheetfile "neoheart_v2.kicad_sch")
 		(attr smd)
@@ -4136,6 +4140,8 @@
 			)
 		)
 		(path "/f3a68977-52c9-47c1-bba4-6670bc971ff9")
+		(sheetname "Principale")
+		(sheetfile "neoheart_v2.kicad_sch")
 		(attr smd)
 		(fp_poly
 			(pts
@@ -5441,7 +5447,7 @@
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(net 49 "unconnected-(D15-DOUT-Pad1)")
 			(pinfunction "DOUT")
-			(pintype "output")
+			(pintype "output+no_connect")
 			(uuid "11b27abe-54ff-4629-a8a4-6a91332e6f81")
 		)
 		(pad "2" smd rect
@@ -9162,8 +9168,8 @@
 				)
 			)
 		)
-		(property "Value" "IRLML2502"
-			(at 4.5774 2.3544 -90)
+		(property "Value" "A1SHB"
+			(at 2.5 1.91 0)
 			(layer "F.Fab")
 			(uuid "023d9bfb-e44e-4f67-885e-55d5883e2651")
 			(effects
