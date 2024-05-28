@@ -1,6 +1,6 @@
 # NeoHeart - Revision 2.0
 Hardware and Software design for an Open Source ATtiny816-based heart shaped PCB with Addressable LEDs.
-<br>![board-render](https://github.com/fellettigiacomo/NeoHeart/blob/main/board-render.png?raw=true)
+<br><br>![board-render](https://github.com/fellettigiacomo/NeoHeart/blob/main/board-render.png?raw=true)
 ## Features
 
 - **Microcontroller**: ATtiny816
