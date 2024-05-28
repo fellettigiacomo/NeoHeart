@@ -1,0 +1,9 @@
+*.kicad_prl
+*.kicad_sch_old
+*.kicad_pcb_old
+fabriaction-toolkit-options.json
+fp-info-cache
+/jlcpcb/gerber
+neoheart_v2-backups
+neoheart-v1
+NeoHeart-backups
