@@ -2,7 +2,7 @@
 
 #define NEOPIXEL_PIN PIN_PC0
 #define NEOPIXEL_COUNT 25
-#define NEOPIXEL_BRIGHTNESS 0.1  // 0 <-> 1
+#define NEOPIXEL_BRIGHTNESS 0.05  // 0 <-> 1
 
 namespace neoheart {
 // variables used internally
