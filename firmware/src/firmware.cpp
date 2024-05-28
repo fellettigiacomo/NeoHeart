@@ -11,45 +11,57 @@
 #define MOSFET PIN_PC2
 
 using namespace neoheart;
+void enableSleep();
+void softwareReset();
+void runRandomAnim();
+void disableSleep();
 
 void setup() {
     // init leds
     initLeds();
-    // init button
+    // clear strip from previous animations
+    clearStrip();
+    // init io
     pinMode(BTN, INPUT_PULLUP);
-
+    pinMode(MOSFET, OUTPUT);
     // init random seed
     randomSeed(analogRead(PIN_PA2));
-
     // attach to interrupt
-    attachInterrupt(digitalPinToInterrupt(BTN), disableSleep, FALLING);
+    attachInterrupt(digitalPinToInterrupt(BTN), softwareReset, FALLING);
+    runRandomAnim();
 }
 
 void loop() {
-    if (digitalRead(BTN) == LOW) {
-        // run animations
-        void (*animations[])() = {heartbeat, bottomup, theatherFill, bounce, incrementalFill, chase, colorWipe, rainbow, theaterChaseRainbow};
-        int randomIndex = random(sizeof(animations) / sizeof(animations[0]));
-        animations[randomIndex]();
-        enableSleep();
-    }
+    // nothing to do here
 }
 
-void enableSleep() {
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);  
-    sleep_enable();                      
-    sleep_cpu();                          
-    sleep_disable();                      
-}
-
-void disableSleep() {
-    sleep_disable(); 
+void runRandomAnim(){
+    digitalWrite(MOSFET, LOW);
+    void (*animations[])() = {heartbeat, bottomup, theatherFill, bounce, incrementalFill, chase, colorWipe, rainbow, theaterChaseRainbow};
+    int randomIndex = random(sizeof(animations) / sizeof(animations[0]));
+    animations[randomIndex]();
+    digitalWrite(MOSFET, HIGH);
     detachInterrupt(digitalPinToInterrupt(BTN));
+    attachInterrupt(digitalPinToInterrupt(BTN), disableSleep, CHANGE);
+    enableSleep();
 }
 
 void softwareReset() {
- wdt_disable();
- wdt_enable(WDTO_15MS);
- while (1) {}
+    // clear interrupts
+    cli();
+    // write in the watchdog control register
+    _PROTECTED_WRITE(WDT.CTRLA, WDT_PERIOD_8CLK_gc | WDT_WINDOW_OFF_gc);
+    // wait for the watchdog to reset the device
+    while (1);
 }
 
+void enableSleep() {
+    sleep_enable();
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);  
+    sleep_cpu();
+}
+
+void disableSleep() {
+    sleep_disable();
+    softwareReset();
+}

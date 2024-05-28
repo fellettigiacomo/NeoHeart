@@ -285,15 +285,16 @@ void colorWipeColor(uint32_t color, int wait) {
 
 void colorWipe() {
     pixels.setBrightness(255 / (1 / NEOPIXEL_BRIGHTNESS));
-    colorWipeColor(pixels.Color(255, 0, 0), 50);
-    colorWipeColor(pixels.Color(0, 255, 0), 50);
-    colorWipeColor(pixels.Color(0, 0, 255), 50);
+    for(int i = 0; i < 3; i++){
+        getRandomColor();
+        colorWipeColor(pixels.Color(r, g, b), 40);
+    }
     clearStrip();
 }
 
 void rainbow() {
     pixels.setBrightness(255 / (1 / NEOPIXEL_BRIGHTNESS));
-    for (long firstPixelHue = 0; firstPixelHue < 5 * 65536; firstPixelHue += 256) {
+    for (long firstPixelHue = 0; firstPixelHue < 2 * 65536; firstPixelHue += 256) {
         pixels.rainbow(firstPixelHue);
         pixels.show();
         delay(5);
