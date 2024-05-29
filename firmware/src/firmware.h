@@ -7,7 +7,7 @@ static constexpr double NEOPIXEL_BRIGHTNESS = 0.05;  // 0 <-> 1
 
 namespace neoheart {
 // variables used internally
-NeoPisell<NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800> pixels{};
+NeoPisell<NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB> pixels{};
 static constexpr int middlepixel = NEOPIXEL_COUNT / 2;
 
 // initialize leds
@@ -48,9 +48,7 @@ void turnOffPixel(int pixel) {
 }
 
 void clearStrip() {
-    for (int i = 0; i < NEOPIXEL_COUNT; i++) {
-        turnOffPixel(i);
-    }
+    pixels.clear();
     pixels.show();
 }
 
