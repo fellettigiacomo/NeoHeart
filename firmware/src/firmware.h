@@ -48,9 +48,7 @@ void turnOffPixel(int pixel) {
 }
 
 void clearStrip() {
-    for (int i = 0; i < NEOPIXEL_COUNT; i++) {
-        turnOffPixel(i);
-    }
+    pixels.clear();
     pixels.show();
 }
 
