@@ -1,21 +1,18 @@
-#include <Adafruit_NeoPixel.h>
+#include <Arduino.h>
+#include <NeoPisell.h>
 
-#define NEOPIXEL_PIN PIN_PC0
-#define NEOPIXEL_COUNT 25
-#define NEOPIXEL_BRIGHTNESS 0.05  // 0 <-> 1
+static constexpr uint8_t NEOPIXEL_PIN = PIN_PC0;
+static constexpr uint8_t NEOPIXEL_COUNT = 25;
+static constexpr double NEOPIXEL_BRIGHTNESS = 0.05;  // 0 <-> 1
 
 namespace neoheart {
 // variables used internally
-Adafruit_NeoPixel pixels;
-int numpixels, middlepixel;
+NeoPisell<NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800> pixels{};
+static constexpr int middlepixel = NEOPIXEL_COUNT / 2;
 
 // initialize leds
 void initLeds() {
-    pixels =
-        Adafruit_NeoPixel(NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
     pixels.begin();
-    numpixels = pixels.numPixels();
-    middlepixel = numpixels / 2;
 }
 
 // red green blue vars used for color generation
@@ -33,7 +30,7 @@ Color colors[] = {{0, 0, 255}, {144, 8, 255}, {255, 25, 221}, {255, 0, 0}, {255,
 
 void getRandomColor() {
     int numColors = 11;
-    int index = random(numColors);
+    long index = random(numColors);
     r = colors[index].r;
     g = colors[index].g;
     b = colors[index].b;
@@ -51,7 +48,7 @@ void turnOffPixel(int pixel) {
 }
 
 void clearStrip() {
-    for (int i = 0; i < numpixels; i++) {
+    for (int i = 0; i < NEOPIXEL_COUNT; i++) {
         turnOffPixel(i);
     }
     pixels.show();
@@ -59,7 +56,7 @@ void clearStrip() {
 
 void fadeOutStrip() {
     for (int j = 0; j < 8; j++) {
-        for (int i = 0; i < numpixels; i++) {
+        for (int i = 0; i < NEOPIXEL_COUNT; i++) {
             paintPixel(i, 1 - ((float)j / (float)10));
         }
         pixels.show();
@@ -101,7 +98,7 @@ void bottomup() {
     getRandomColor();
     int animcounter = 0;
     while (animcounter < 3) {
-        for (int i = 0; i <= numpixels / 2; i++) {
+        for (int i = 0; i <= NEOPIXEL_COUNT / 2; i++) {
             turnOffPixel(middlepixel + i - 3);
             paintPixel(middlepixel + i - 2, 0.2);
             paintPixel(middlepixel + i - 1, 0.5);
@@ -113,15 +110,15 @@ void bottomup() {
             pixels.show();
             delay(30);
         }
-        for (int i = 0; i <= numpixels / 2; i++) {
+        for (int i = 0; i <= NEOPIXEL_COUNT / 2; i++) {
             turnOffPixel(i - 3);
             paintPixel(i - 2, 0.2);
             paintPixel(i - 1, 0.5);
             paintPixel(i, 1);
-            turnOffPixel(numpixels - i + 3);
-            paintPixel(numpixels - i + 2, 0.2);
-            paintPixel(numpixels - i + 1, 0.5);
-            paintPixel(numpixels - i, 1);
+            turnOffPixel(NEOPIXEL_COUNT - i + 3);
+            paintPixel(NEOPIXEL_COUNT - i + 2, 0.2);
+            paintPixel(NEOPIXEL_COUNT - i + 1, 0.5);
+            paintPixel(NEOPIXEL_COUNT - i, 1);
             pixels.show();
             delay(30);
         }
@@ -136,13 +133,13 @@ void bottomupsingle() {
     int randpixel = 0;
     int animcounter = 0;
     while (animcounter < 2) {
-        int affectedpixels[numpixels];
-        for (int i = 0; i < numpixels; i++) {
+        int affectedpixels[NEOPIXEL_COUNT];
+        for (int i = 0; i < NEOPIXEL_COUNT; i++) {
             bool duplicate = false;
             do {
-                randpixel = random(0, numpixels);
+                randpixel = random(0, NEOPIXEL_COUNT);
                 bool found = false;
-                for (int x = 0; x < numpixels; x++) {
+                for (int x = 0; x < NEOPIXEL_COUNT; x++) {
                     if (randpixel == affectedpixels[x]) {
                         found = true;
                         break;
@@ -167,14 +164,14 @@ void bottomupsingle() {
 
 void theatherFill() {
     getRandomColor();
-    for (int i = 0; i < numpixels; i++) {
+    for (int i = 0; i < NEOPIXEL_COUNT; i++) {
         if (i % 2 == 0) {
             paintPixel(i, 1);
             pixels.show();
             delay(80);
         }
     }
-    for (int i = numpixels; i > 0; i--) {
+    for (int i = NEOPIXEL_COUNT; i > 0; i--) {
         if (i % 2 == 1) {
             paintPixel(i, 1);
             pixels.show();
@@ -185,7 +182,7 @@ void theatherFill() {
     int animcounter = 0;
     while (animcounter < 3) {
         for (int j = 0; j < 10; j++) {
-            for (int i = 0; i < numpixels; i++) {
+            for (int i = 0; i < NEOPIXEL_COUNT; i++) {
                 paintPixel(i, 1 - ((float)j / (float)10));
             }
             pixels.show();
@@ -193,7 +190,7 @@ void theatherFill() {
         }
         delay(100);
         for (int j = 0; j < 10; j++) {
-            for (int i = 0; i < numpixels; i++) {
+            for (int i = 0; i < NEOPIXEL_COUNT; i++) {
                 paintPixel(i, (float)j / (float)10);
             }
             pixels.show();
@@ -210,19 +207,19 @@ void theatherFill() {
 void bounce() {
     getRandomColor();
     int trips = 1;
-    while (trips < numpixels + 1) {
-        for (int i = 0; i < numpixels; i++) {
+    while (trips < NEOPIXEL_COUNT + 1) {
+        for (int i = 0; i < NEOPIXEL_COUNT; i++) {
             paintPixel(i, 1);
             turnOffPixel(i - trips);
             pixels.show();
-            delay((numpixels - trips) * (1 / ((float)trips / 4)));
+            delay((NEOPIXEL_COUNT - trips) * (1 / ((float)trips / 4)));
         }
         trips++;
-        for (int i = numpixels; i > -1; i--) {
+        for (int i = NEOPIXEL_COUNT; i > -1; i--) {
             paintPixel(i, 1);
             turnOffPixel(i + trips);
             pixels.show();
-            delay((numpixels - trips) * (1 / ((float)trips / 4)));
+            delay((NEOPIXEL_COUNT - trips) * (1 / ((float)trips / 4)));
         }
         trips++;
     }
@@ -233,16 +230,16 @@ void bounce() {
 
 void incrementalFill() {
     getRandomColor();
-    for (int j = 0; j <= numpixels / 2; j++) {
-        for (int i = 0; i <= numpixels / 2; i++) {
+    for (int j = 0; j <= NEOPIXEL_COUNT / 2; j++) {
+        for (int i = 0; i <= NEOPIXEL_COUNT / 2; i++) {
             paintPixel(middlepixel - i, 1);
-            if ((numpixels / 2) - i > j) turnOffPixel(middlepixel - i + 1);
+            if ((NEOPIXEL_COUNT / 2) - i > j) turnOffPixel(middlepixel - i + 1);
             pixels.show();
             delay(10);
         }
-        for (int i = 0; i <= numpixels / 2; i++) {
+        for (int i = 0; i <= NEOPIXEL_COUNT / 2; i++) {
             paintPixel(middlepixel + i, 1);
-            if (i < (numpixels / 2) - j) turnOffPixel(middlepixel + i - 1);
+            if (i < (NEOPIXEL_COUNT / 2) - j) turnOffPixel(middlepixel + i - 1);
             pixels.show();
             delay(10);
         }
@@ -256,17 +253,17 @@ void chase() {
     getRandomColor();
     int p = 0;
     int currentPixel;
-    for (int i = 0; i < (numpixels * 3) + 1; i++) {
-        currentPixel = i % numpixels;
-        p = currentPixel - 5 >= 0 ? currentPixel - 5 : (currentPixel - 5) + numpixels;
+    for (int i = 0; i < (NEOPIXEL_COUNT * 3) + 1; i++) {
+        currentPixel = i % NEOPIXEL_COUNT;
+        p = currentPixel - 5 >= 0 ? currentPixel - 5 : (currentPixel - 5) + NEOPIXEL_COUNT;
         turnOffPixel(p);
-        p = currentPixel - 4 >= 0 ? currentPixel - 4 : (currentPixel - 4) + numpixels;
+        p = currentPixel - 4 >= 0 ? currentPixel - 4 : (currentPixel - 4) + NEOPIXEL_COUNT;
         paintPixel(p, 0.1);
-        p = currentPixel - 3 >= 0 ? currentPixel - 3 : (currentPixel - 3) + numpixels;
+        p = currentPixel - 3 >= 0 ? currentPixel - 3 : (currentPixel - 3) + NEOPIXEL_COUNT;
         paintPixel(p, 0.2);
-        p = currentPixel - 2 >= 0 ? currentPixel - 2 : (currentPixel - 2) + numpixels;
+        p = currentPixel - 2 >= 0 ? currentPixel - 2 : (currentPixel - 2) + NEOPIXEL_COUNT;
         paintPixel(p, 0.4);
-        p = currentPixel - 1 >= 0 ? currentPixel - 1 : (currentPixel - 1) + numpixels;
+        p = currentPixel - 1 >= 0 ? currentPixel - 1 : (currentPixel - 1) + NEOPIXEL_COUNT;
         paintPixel(p, 0.6);
         paintPixel(currentPixel, 1);
         pixels.show();
