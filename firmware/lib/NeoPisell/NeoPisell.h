@@ -316,6 +316,7 @@ public:
         // loop down to exactly 64 words -- the maximum possible for a
         // relative branch.
 
+        cli();
         asm volatile(
                 "headD:"
                 "\n\t" // Clk  Pseudocode
@@ -458,6 +459,7 @@ public:
                 : [byte] "+r"(b), [n1] "+r"(n1), [n2] "+r"(n2), [count] "+w"(i)
         : [port] "I"(portOut), [ptr] "e"(ptr), [hi] "r"(hi),
         [lo] "r"(lo));
+        sei();
 
 
 #if defined(NEO_KHZ400)
@@ -479,6 +481,7 @@ public:
         next = lo;
         bit = 8;
 
+        cli();
         asm volatile("head20:"
                      "\n\t" // Clk  Pseudocode    (NeoPixelType =  0)
                      "st   %a[port], %[hi]"
@@ -524,6 +527,7 @@ public:
                 : [port] "+e"(portOut), [byte] "+r"(b), [bit] "+r"(bit),
         [next] "+r"(next), [count] "+w"(i)
         : [hi] "r"(hi), [lo] "r"(lo), [ptr] "e"(ptr));
+        sei();
       }
 #endif // NEO_KHZ400
 
@@ -549,6 +553,7 @@ public:
         // 20 inst. clocks per bit: HHHHHxxxxxxxxLLLLLLL
         // ST instructions:         ^   ^        ^       (NeoPixelType=0,5,13)
 
+        cli();
         asm volatile("head20:"
                      "\n\t" // Clk  Pseudocode    (NeoPixelType =  0)
                      "st   %a[port],  %[hi]"
@@ -596,6 +601,7 @@ public:
                 : [port] "+e"(portOut), [byte] "+r"(b), [bit] "+r"(bit),
         [next] "+r"(next), [count] "+w"(i)
         : [ptr] "e"(ptr), [hi] "r"(hi), [lo] "r"(lo));
+        sei();
 
 #if defined(NEO_KHZ400)
       } else { // 400 KHz
@@ -605,6 +611,7 @@ public:
         // 40 inst. clocks per bit: HHHHHHHHxxxxxxxxxxxxLLLLLLLLLLLLLLLLLLLL
         // ST instructions:         ^       ^           ^         (NeoPixelType=0,8,20)
 
+        cli();
         asm volatile("head40:"
                      "\n\t" // Clk  Pseudocode    (NeoPixelType =  0)
                      "st   %a[port], %[hi]"
@@ -674,6 +681,7 @@ public:
                 : [port] "+e"(portOut), [byte] "+r"(b), [bit] "+r"(bit),
         [next] "+r"(next), [count] "+w"(i)
         : [ptr] "e"(ptr), [hi] "r"(hi), [lo] "r"(lo));
+        sei();
       }
 #endif // NEO_KHZ400
 
