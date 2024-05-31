@@ -5035,7 +5035,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 111.76) (xy 217.17 107.95)
+			(xy 215.9 121.92) (xy 215.9 125.73)
 		)
 		(stroke
 			(width 0)
@@ -5055,7 +5055,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 121.92) (xy 217.17 124.46)
+			(xy 215.9 111.76) (xy 215.9 109.22)
 		)
 		(stroke
 			(width 0)
@@ -5835,7 +5835,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery")
-		(at 217.17 116.84 180)
+		(at 215.9 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5844,7 +5844,7 @@
 		(fields_autoplaced yes)
 		(uuid "04314939-685a-4401-842a-ca5a7ac559d7")
 		(property "Reference" "BT1"
-			(at 213.36 118.6815 0)
+			(at 219.71 114.9985 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5853,7 +5853,7 @@
 			)
 		)
 		(property "Value" "Battery"
-			(at 213.36 116.1415 0)
+			(at 219.71 117.5385 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5862,7 +5862,7 @@
 			)
 		)
 		(property "Footprint" "Battery:BatteryHolder_Keystone_1060_1x2032"
-			(at 217.17 118.364 90)
+			(at 215.9 115.316 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5871,7 +5871,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 217.17 118.364 90)
+			(at 215.9 115.316 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5880,7 +5880,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 217.17 116.84 0)
+			(at 215.9 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9117,7 +9117,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 217.17 107.95 180)
+		(at 215.9 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9125,7 +9125,7 @@
 		(dnp no)
 		(uuid "9a836248-6e43-4745-97e7-963747002fe7")
 		(property "Reference" "#PWR05"
-			(at 217.17 101.6 0)
+			(at 215.9 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9134,7 +9134,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 217.17 104.14 0)
+			(at 215.9 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9142,7 +9142,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 217.17 107.95 0)
+			(at 215.9 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9151,7 +9151,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 217.17 107.95 0)
+			(at 215.9 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9160,7 +9160,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 217.17 107.95 0)
+			(at 215.9 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9247,7 +9247,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V0")
-		(at 217.17 124.46 180)
+		(at 215.9 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9256,7 +9256,7 @@
 		(fields_autoplaced yes)
 		(uuid "9ba173aa-6b6b-4238-81b0-766ba0d75cf8")
 		(property "Reference" "#PWR06"
-			(at 217.17 120.65 0)
+			(at 215.9 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9265,7 +9265,7 @@
 			)
 		)
 		(property "Value" "+3V0"
-			(at 217.17 129.54 0)
+			(at 215.9 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9273,7 +9273,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 217.17 124.46 0)
+			(at 215.9 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9282,7 +9282,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 217.17 124.46 0)
+			(at 215.9 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9291,7 +9291,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 217.17 124.46 0)
+			(at 215.9 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
