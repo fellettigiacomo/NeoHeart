@@ -4329,7 +4329,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 113.03) (xy 176.53 113.03)
+			(xy 166.37 113.03) (xy 176.53 113.03)
 		)
 		(stroke
 			(width 0)
@@ -5307,7 +5307,7 @@
 		)
 		(uuid "ba3569b7-e8b6-45ba-9849-85ecda1bfc87")
 	)
-	(text "06/05/2024"
+	(text "03/06/2024"
 		(exclude_from_sim no)
 		(at 212.344 193.294 0)
 		(effects
@@ -5327,9 +5327,9 @@
 		)
 		(uuid "c502f7d2-3ddb-4a5c-8227-312fc10e50a3")
 	)
-	(text "V2"
+	(text "V2.1"
 		(exclude_from_sim no)
-		(at 269.748 193.294 0)
+		(at 270.256 193.548 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9350,7 +9350,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V0")
-		(at 171.45 113.03 90)
+		(at 166.37 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9359,7 +9359,7 @@
 		(fields_autoplaced yes)
 		(uuid "a898530d-6f2f-449b-ac84-0a2d1eb7a264")
 		(property "Reference" "#PWR04"
-			(at 175.26 113.03 0)
+			(at 166.37 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9368,7 +9368,7 @@
 			)
 		)
 		(property "Value" "+3V0"
-			(at 167.64 113.0299 90)
+			(at 168.91 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9377,7 +9377,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 171.45 113.03 0)
+			(at 166.37 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9386,7 +9386,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 113.03 0)
+			(at 166.37 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9395,7 +9395,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 171.45 113.03 0)
+			(at 166.37 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)

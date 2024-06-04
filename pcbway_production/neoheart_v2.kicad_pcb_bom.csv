@@ -1,0 +1,17 @@
+﻿designator,quantity,value,pack,mpn,mount_type
+BT1,1,Battery,BatteryHolder_Keystone_1060_1x2032,,smt
+C2,1,100nF,C_0402_1005Metric_Pad0.74x0.62mm_HandSolder,,smt
+"C3, C4",2,22μF,C_0603_1608Metric,,smt
+"D1, D10, D11, D12, D13, D14, D15, D16, D17, D18, D19, D2, D20, D21, D22, D23, D24, D25, D3, D4, D5, D6, D7, D8, D9",25,SK6805,LED_SK6805_PLCC4_2.4x2.7mm_P1.3mm,,smt
+J1,1,Conn_01x03,PinHeader_1x03_P2.54mm_Vertical,,tht
+L1,1,MLP2012V4R7MT0S1,L_0805_2012Metric,,smt
+MCU1,1,ATtiny816-MNR,VQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm,,smt
+Q1,1,A1SHB,SOT95P237X112-3N,,smt
+Q2,1,BSS138,SOT95P237X112-3N,,smt
+R1,1,1K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,,smt
+R2,1,180kΩ,R_0805_2012Metric,,smt
+R3,1,"1,5MΩ",R_0603_1608Metric,,smt
+"R4, R5",2,10K,R_0402_1005Metric_Pad0.72x0.64mm_HandSolder,,smt
+SW-ANIM1,1,TS-1187A-B-A-B,SW_Push_1P1T_XKB_TS-1187A,,smt
+"TP1, TP2, TP4",3,PC3,TestPoint_Pad_D1.0mm,,tht
+U2,1,TPS61240TDRVRQ1,SON65P200X200X80-7N,,smt
