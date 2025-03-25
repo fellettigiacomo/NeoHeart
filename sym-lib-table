@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "TPS61240TDRVRQ1")(type "KiCad")(uri "${KIPRJMOD}/lib/TPS61240TDRVRQ1.kicad_sym")(options "")(descr ""))
   (lib (name "IRLML2502")(type "KiCad")(uri "${KIPRJMOD}/lib/IRLML2502.kicad_sym")(options "")(descr ""))
+  (lib (name "S8421-45R")(type "KiCad")(uri "${KIPRJMOD}/lib/S8421-45R.kicad_sym")(options "")(descr ""))
 )

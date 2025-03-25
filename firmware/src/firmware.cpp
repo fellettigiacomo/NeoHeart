@@ -36,11 +36,11 @@ void loop() {
 }
 
 void runRandomAnim(){
-    digitalWrite(MOSFET, LOW);
+    digitalWrite(MOSFET, HIGH);
     void (*animations[])() = {heartbeat, bottomup, theatherFill, bounce, incrementalFill, chase, colorWipe, rainbow, theaterChaseRainbow};
     int randomIndex = random(sizeof(animations) / sizeof(animations[0]));
     animations[randomIndex]();
-    digitalWrite(MOSFET, HIGH);
+    digitalWrite(MOSFET, LOW);
     detachInterrupt(digitalPinToInterrupt(BTN));
     attachInterrupt(digitalPinToInterrupt(BTN), disableSleep, CHANGE);
     enableSleep();
