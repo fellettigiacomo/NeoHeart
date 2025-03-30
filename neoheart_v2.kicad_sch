@@ -3696,8 +3696,16 @@
 		(uuid "9debbbd0-838f-4498-b754-bc4af8eebbff")
 	)
 	(no_connect
+		(at 218.44 73.66)
+		(uuid "ada78194-3be2-4e7c-ad56-0158ee9324c8")
+	)
+	(no_connect
 		(at 106.68 85.09)
 		(uuid "ca4e602b-206b-46ec-9d6c-2b480019390d")
+	)
+	(no_connect
+		(at 248.92 48.26)
+		(uuid "ca791d4a-240e-407e-b48c-48313edab054")
 	)
 	(no_connect
 		(at 248.92 58.42)
@@ -6432,7 +6440,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "6.3 or 10V"
 			(at 20.32 127 0)
 			(effects
 				(font
@@ -6569,7 +6577,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 165.1 144.78 0)
 			(effects
 				(font
@@ -7043,7 +7051,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "6.3 or 10V"
 			(at 26.67 119.38 0)
 			(effects
 				(font
@@ -8750,7 +8758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "ripple < 20%, at least 400mA"
 			(at 50.8 115.57 0)
 			(effects
 				(font
@@ -8896,7 +8904,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "6.3 or 10V"
 			(at 203.2 52.07 0)
 			(effects
 				(font
@@ -9238,7 +9246,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "10V"
 			(at 100.33 120.65 0)
 			(effects
 				(font
@@ -9943,7 +9951,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "6.3 or 10V"
 			(at 34.29 127 0)
 			(effects
 				(font
@@ -10080,7 +10088,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 171.45 144.78 0)
 			(effects
 				(font
@@ -10395,7 +10403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 158.75 144.78 0)
 			(effects
 				(font
