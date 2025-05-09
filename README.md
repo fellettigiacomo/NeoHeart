@@ -1,5 +1,6 @@
 # NeoHeart - Revision 2.2🎉
 Hardware and Software design for an Open Source ATtiny816-based heart shaped PCB with Addressable LEDs.
+<br><br>⚠️ **Warning**: Unfortunately, this release is not yet ready for production. There are still issues with the CR2032 battery not providing enough power, causing glitches and freezes in the LEDs. I'm currently working on a fix. ⚠️
 <br><br>![board-render](https://github.com/fellettigiacomo/NeoHeart/blob/main/images/render.png?raw=true)
 ## Project sponsor: PCBWay
 Thanks to [PCBWay](https://www.pcbway.com/) for sponsoring this open-source project. Check out the sponsorship section below to learn more about their support.
