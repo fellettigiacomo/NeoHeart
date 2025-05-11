@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "06284620-908d-46c3-91f8-44c52d8f54aa")
 	(paper "A4")
+	(title_block
+		(title "NeoHeart V2")
+		(date "2025-05-11")
+		(rev "2.2.1")
+		(company "jack0217.dev")
+	)
 	(lib_symbols
 		(symbol "Connector:TestPoint_Small"
 			(pin_numbers
@@ -3178,16 +3184,6 @@
 		)
 		(uuid "3393161e-7e9f-4b00-8c42-005d3e82d758")
 	)
-	(text "NeoHeart"
-		(exclude_from_sim no)
-		(at 194.564 189.738 0)
-		(effects
-			(font
-				(size 2 2)
-			)
-		)
-		(uuid "3e843fc5-5326-47cd-9d3a-1c617dc6a8cf")
-	)
 	(text "HEADERS + TESTPAD"
 		(exclude_from_sim no)
 		(at 134.112 135.636 0)
@@ -3219,16 +3215,6 @@
 		)
 		(uuid "ba3569b7-e8b6-45ba-9849-85ecda1bfc87")
 	)
-	(text "15/03/2024"
-		(exclude_from_sim no)
-		(at 212.344 193.294 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "c034dca3-91eb-4bbe-b5eb-03e6c258a40e")
-	)
 	(text "LEDS (SK6805MINIJ)"
 		(exclude_from_sim no)
 		(at 26.162 24.892 0)
@@ -3238,16 +3224,6 @@
 			)
 		)
 		(uuid "c502f7d2-3ddb-4a5c-8227-312fc10e50a3")
-	)
-	(text "V2.2"
-		(exclude_from_sim no)
-		(at 270.256 193.548 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "ed281361-e2da-49e3-9a3b-71682382d585")
 	)
 	(text "LEVEL SHIFTER MOSFET"
 		(exclude_from_sim no)
@@ -7444,7 +7420,7 @@
 				)
 			)
 		)
-		(property "Value" "BSS138"
+		(property "Value" "IRLML2502"
 			(at 195.58 123.19 90)
 			(effects
 				(font
@@ -7471,7 +7447,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "\nN-Channel 20 V 4.2A (Ta) 1.25W (Ta) Surface Mount Micro3â„¢ /SOT-23\n"
+		(property "Description" "N-Channel 20 V 4.2A (Ta) 1.25W (Ta) Surface Mount Micro3â„¢ /SOT-23"
 			(at 195.58 114.3 0)
 			(effects
 				(font
@@ -7491,16 +7467,6 @@
 				(hide yes)
 			)
 		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "1.12 mm"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Package" "SOT-23-3 International Rectifier"
 			(at 195.58 114.3 0)
 			(effects
@@ -7511,107 +7477,7 @@
 				(hide yes)
 			)
 		)
-		(property "Price" "None"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/IRLML2502/Infineon+Technologies/view-part/?ref=eda"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "IPC 7351B"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "April 24, 2014"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/IRLML2502/Infineon+Technologies/view-part/?ref=snap"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" "11907"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "IRLML2502"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=453707&manufacturer=Infineon Technologies&part_name=IRLML2502&search_term=None"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "SNAPEDA_PN" "IRLML2502"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 195.58 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "Infineon Technologies"
 			(at 195.58 114.3 0)
 			(effects
 				(font
