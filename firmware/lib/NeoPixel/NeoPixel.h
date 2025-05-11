@@ -1,5 +1,5 @@
 /*!
- * @file NeoPisell.h
+ * @file NeoPixel.h
  *
  * This is part of Adafruit's NeoPixel library for the Arduino platform,
  * allowing a broad range of microcontroller boards (most AVR boards,
@@ -15,14 +15,14 @@
  * with contributions by PJRC, Michael Miller and other members of the
  * open source community.
  *
- * This file is part of the NeoPisell library.
+ * This file is part of the NeoPixel library.
  *
- * NeoPisell is free software: you can redistribute it and/or
+ * NeoPixel is free software: you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
  *
- * NeoPisell is distributed in the hope that it will be useful,
+ * NeoPixel is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
@@ -47,7 +47,7 @@
 
 // The order of primary colors in the NeoPixel data stream can vary among
 // device types, manufacturers and even different revisions of the same
-// item.  The third parameter to the NeoPisell constructor encodes
+// item.  The third parameter to the NeoPixel constructor encodes
 // the per-pixel byte offsets of the red, green and blue primaries (plus
 // white, if present) in the data stream -- the following #defines provide
 // an easier-to-use named version for each permutation. e.g. NEO_GRB
@@ -111,7 +111,7 @@ static constexpr uint8_t NEO_BGWR = ((2 << 6) | (3 << 4) | (1 << 2) | (0)); ///<
 static constexpr uint8_t NEO_BGRW = ((3 << 6) | (2 << 4) | (1 << 2) | (0)); ///< Transmit as B,G,R,W
 
 
-// These two tables are declared outside the NeoPisell class
+// These two tables are declared outside the NeoPixel class
 // because some boards may require oldschool compilers that don't
 // handle the C++11 constexpr keyword.
 
@@ -176,7 +176,7 @@ static const uint8_t PROGMEM _NeoPixelGammaTable[256] = {
 */
 
 template<uint16_t NumPins, int8_t Pin, uint8_t NeoPixelType = NEO_GRB>
-class NeoPisell {
+class NeoPixel {
 private:
     static_assert(Pin >= 0, "Invalid pin number");
     using PIN = PinInfo<Pin>;
@@ -196,11 +196,11 @@ private:
     uint32_t endTime = 0;                                             ///< Latch timing reference
 
 public:
-    NeoPisell() {
+    NeoPixel() {
       clear();
     }
 
-    ~NeoPisell() {
+    ~NeoPixel() {
       if (begun) {
         pinMode(pin, INPUT);
       }
@@ -676,7 +676,7 @@ public:
     int16_t getPin(void) const { return pin; };
 
     /*!
-      @brief   Return the number of pixels in an NeoPisell strip object.
+      @brief   Return the number of pixels in an NeoPixel strip object.
       @return  Pixel count (0 if not set).
     */
     uint16_t numPixels(void) const { return numLEDs; }

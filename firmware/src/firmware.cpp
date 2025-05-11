@@ -8,7 +8,7 @@
 #endif
 
 #define BTN PIN_PC1
-#define MOSFET PIN_PC2
+#define BOOST_EN PIN_PC2
 
 using namespace neoheart;
 void enableSleep();
@@ -17,17 +17,18 @@ void runRandomAnim();
 void disableSleep();
 
 void setup() {
-    // init leds
+    // leds initialization
     initLeds();
-    // clear strip from previous animations
+    // clear strip
     clearStrip();
     // init io
     pinMode(BTN, INPUT_PULLUP);
-    pinMode(MOSFET, OUTPUT);
+    pinMode(BOOST_EN, OUTPUT);
     // init random seed
     randomSeed(analogRead(PIN_PA2));
     // attach to interrupt
     attachInterrupt(digitalPinToInterrupt(BTN), softwareReset, FALLING);
+    // run first animation
     runRandomAnim();
 }
 
@@ -36,11 +37,12 @@ void loop() {
 }
 
 void runRandomAnim(){
-    digitalWrite(MOSFET, HIGH);
+    // the boost converter is enabled to power the strip until the end of the animation, then an interrupt is attached to the button and the attiny816 is put to sleep
+    digitalWrite(BOOST_EN, HIGH);
     void (*animations[])() = {heartbeat, bottomup, theatherFill, bounce, incrementalFill, chase, colorWipe, rainbow, theaterChaseRainbow};
     int randomIndex = random(sizeof(animations) / sizeof(animations[0]));
     animations[randomIndex]();
-    digitalWrite(MOSFET, LOW);
+    digitalWrite(BOOST_EN, LOW);
     detachInterrupt(digitalPinToInterrupt(BTN));
     attachInterrupt(digitalPinToInterrupt(BTN), disableSleep, CHANGE);
     enableSleep();

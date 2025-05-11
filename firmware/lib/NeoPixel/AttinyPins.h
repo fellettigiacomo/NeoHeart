@@ -2,8 +2,8 @@
 // Created by depau on 28/05/24.
 //
 
-#ifndef NEOPISELL_ATTINYPORTS_H
-#define NEOPISELL_ATTINYPORTS_H
+#ifndef NeoPixel_ATTINYPORTS_H
+#define NeoPixel_ATTINYPORTS_H
 
 /// Force the compiler to assume the value is a compile-time constant
 #define CONSTEXPR(_x) __builtin_constant_p(_x) ? (_x) : (_x)
@@ -228,4 +228,4 @@ struct PinInfo<PIN_PC3> {
     static volatile VPORT_t *vport() { return reinterpret_cast<VPORT_t *>(vportAddr); }
 };
 
-#endif //NEOPISELL_ATTINYPORTS_H
+#endif //NeoPixel_ATTINYPORTS_H

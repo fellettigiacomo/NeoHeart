@@ -1,13 +1,13 @@
 #include <Arduino.h>
-#include <NeoPisell.h>
+#include <NeoPixel.h>
 
 static constexpr uint8_t NEOPIXEL_PIN = PIN_PC0;
 static constexpr uint8_t NEOPIXEL_COUNT = 25;
-static constexpr double NEOPIXEL_BRIGHTNESS = 0.05;  // 0 <-> 1
+static constexpr double NEOPIXEL_BRIGHTNESS = 0.05;  // 5% brightness (0.05/1)
 
 namespace neoheart {
 // variables used internally
-NeoPisell<NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB> pixels{};
+NeoPixel<NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB> pixels{};
 static constexpr int middlepixel = NEOPIXEL_COUNT / 2;
 
 // initialize leds
